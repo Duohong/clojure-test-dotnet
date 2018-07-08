@@ -1,7 +1,9 @@
-(use '[clojure.test])
- 
-(System.Reflection.Assembly/LoadWithPartialName "Production")
-(import (Production Calculator))
+(assembly-load-from "Production.dll")
+
+(ns clojure-test-dotnet.test
+  (:import (Production Calculator))
+  (:require [clojure.test]))
+  
 
 ; test static method
 (deftest calculator-static-add
@@ -12,9 +14,10 @@
 
 ; test instance method
 (deftest calculator-add
-  (let [c (Calculator. 1)]
-    (.Add c 2)
-    (.Add c 3)
-    (is (= 10 (.Add c 4)))))
+  (let [cal (Calculator. 1)] ; = 1
+    (is (= 3 (.Add cal 2)))            
+    (is (= 0 (.Clear cal)))            
+    (is (= 3 (.Add cal 3)))            
+    (is (= 7 (.Add cal 4)))))
 
 (calculator-add)
