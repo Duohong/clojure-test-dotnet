@@ -2,8 +2,10 @@
 
 (ns clojure-test-dotnet.test
   (:import (Production Calculator))
-  (:require [clojure.test]))
-  
+  (:require [clojure.test :refer :all]
+            [clojure.test.check.generators :as gen]
+            [clojure.test.check.properties :as prop]))
+
 
 ; test static method
 (deftest calculator-static-add
@@ -21,3 +23,9 @@
     (is (= 7 (.Add cal 4)))))
 
 (calculator-add)
+
+(deftest calculator-add-gen
+  (let [ab (gen/sample (gen/choose -1000 1000) 2)]
+    (is (= (+ (first ab) (second ab)) (Calculator/Add (first ab) (second ab))))))            
+
+(calculator-add-gen)
