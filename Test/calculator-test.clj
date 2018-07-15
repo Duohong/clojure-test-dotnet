@@ -48,3 +48,19 @@
       (is (= (+ c d) (.Add cal d))))))
 
 (calculator-add-spec)
+
+
+(defn duohong-add [a b] (+ a b))
+(defn crappy-function
+  [a b]
+  (duohong-add a b))
+
+(deftest crappy-function-test
+  (is (= 3 (crappy-function 1 2)))
+  (is (= 7 (crappy-function 3 4))))
+(crappy-function-test)
+
+(deftest crappy-function-redefs-test
+  (with-redefs [duohong-add (constantly 9)]
+    (is (= 9 (crappy-function 3 5)))))
+(crappy-function-redef-test)
