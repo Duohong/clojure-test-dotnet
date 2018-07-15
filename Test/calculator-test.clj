@@ -7,7 +7,7 @@
   (:require [clojure.test :refer :all]
             [clojure.test.check.generators :as gen]
             [clojure.test.check.properties :as prop]
-			[clojure.test.check.clojure-test :refer [defspec]]))
+            [clojure.test.check.clojure-test :refer [defspec]]))
 
 
 ; test static method
@@ -37,11 +37,11 @@
 ; test by spec
 (defspec calculator-add-spec 10
   (prop/for-all [a gen/int
-		         b gen/int
+                 b gen/int
                  c gen/int
                  d gen/int]
     (let [cal (Calculator. a)] ; = a
- 	  (println a b c d)
+      (println a b c d)
       (is (= (+ a b) (.Add cal b)))            
       (is (= 0       (.Clear cal)))            
       (is (= c       (.Add cal c)))            
