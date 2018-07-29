@@ -2,7 +2,12 @@
 
 namespace Production
 {
-    public class Calculator
+    public interface ICalculator
+    {
+        int Add(int a);
+    }
+
+    public class Calculator : ICalculator
     {
         private int mMemory;
 
