@@ -60,11 +60,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SchoolBagTest.cs" />
     <Compile Include="StubCalculatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="stubCalculator.clj" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Production\Production.csproj">

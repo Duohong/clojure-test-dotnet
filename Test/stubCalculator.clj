@@ -3,13 +3,13 @@
 (ns stubCalculator
   (:require [clojure.core])
   (:gen-class
-    :init init
+;    :init init
 	:main false
     :implements [Production.ICalculator]))
 
-(defn -init []
-  [[] (ref {})]
-)
+;(defn -init []
+;  [[] (ref {})]
+;)
 
 (defn -Add [this a]
   (* a a)
