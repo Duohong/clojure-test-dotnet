@@ -12,5 +12,5 @@
 ;)
 
 (defn -Add [this a]
-  (* a a)
+  (int (* a a))
 )
