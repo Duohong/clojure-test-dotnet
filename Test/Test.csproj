@@ -65,7 +65,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="calculator-test.clj" />
     <None Include="packages.config" />
+    <None Include="schoolBag-test.clj" />
+    <None Include="stubCalculator-test.clj" />
     <None Include="stubCalculator.clj" />
   </ItemGroup>
   <ItemGroup>
